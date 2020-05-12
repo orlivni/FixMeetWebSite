@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixMeetWeb", "FixMeetWeb\FixMeetWeb.csproj", "{376E32E7-95DA-47E7-B779-546DB6F3F532}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{376E32E7-95DA-47E7-B779-546DB6F3F532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376E32E7-95DA-47E7-B779-546DB6F3F532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376E32E7-95DA-47E7-B779-546DB6F3F532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376E32E7-95DA-47E7-B779-546DB6F3F532}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D893AA7-AE3E-4E5E-BEB6-A013A20C1A50}
+	EndGlobalSection
+EndGlobal
