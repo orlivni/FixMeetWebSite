@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 
 namespace FixMeetWeb.Models
 {
-        public enum Category
-        {
-            Food,
-            Sport,
-            Cosmetic,
-            Plumbery,
-            Transportation
-        }   
+    public enum Category
+    {
+        Food,
+        Sport,
+        Music,
+        Cosmetic,
+        Plumbery,
+        Transportation
+    }
+
 }

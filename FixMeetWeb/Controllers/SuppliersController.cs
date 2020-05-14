@@ -22,29 +22,67 @@ namespace FixMeetWeb.Controllers
         }
 
         // GET: Suppliers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder,
+                                               string currentFilter,
+                                               string searchString,
+                                               int? pageNumber)
         {
-           /* ViewData["NameSortParm"] = String.IsNullOrEmpty(SortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-            var suppliers = from s in _context.Supplier
-                           select s;
-            switch (SortOrder)
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["LastSortParm"] = String.IsNullOrEmpty(sortOrder) ? "lastname_desc" : "";
+            ViewData["RadiusSortParm"] = sortOrder == "Radius" ? "radius_desc" : "Radius";
+            ViewData["CategorySortParm"] = sortOrder == "Category" ? "category_desc" : "Category";
+
+            ViewData["CurrentSort"] = sortOrder;
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            var suppliers = from s in _context.Suppliers
+                            select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                suppliers = suppliers.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstName.Contains(searchString));
+            }
+            switch (sortOrder)
             {
                 case "name_desc":
+                    suppliers = suppliers.OrderByDescending(s => s.FirstName);
+                    break;
+                case "lastname_desc":
                     suppliers = suppliers.OrderByDescending(s => s.LastName);
                     break;
-                case "Date":
-                    suppliers = suppliers.OrderBy(s => s.EnrollmentDate);
+                case "Radius":
+                    suppliers = suppliers.OrderBy(s => s.Radius);
                     break;
-                case "date_desc":
-                    suppliers = suppliers.OrderByDescending(s => s.EnrollmentDate);
+                case "radius_desc":
+                    suppliers = suppliers.OrderByDescending(s => s.Radius);
+                    break;
+                case "Category":
+                    suppliers = suppliers.OrderBy(s => s.Category);
+                    break;
+                case "category_desc":
+                    suppliers = suppliers.OrderByDescending(s => s.Category);
                     break;
                 default:
-                    suppliers = suppliers.OrderBy(s => s.LastName);
+                    suppliers = suppliers.OrderBy(s => s.FirstName);
                     break;
             }
-            return View(await suppliers.AsNoTracking().ToListAsync());*/
-            return View(await _context.Suppliers.ToListAsync());
+
+            int pageSize = 4;
+            return View(await PaginatedList<Supplier>.CreateAsync(suppliers.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+
+            //return View(await suppliers.AsNoTracking().ToListAsync());
+            //return View(await _context.Suppliers.ToListAsync());
         }
 
         // GET: Suppliers/Details/5

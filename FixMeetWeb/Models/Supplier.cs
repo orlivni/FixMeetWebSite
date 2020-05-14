@@ -52,8 +52,8 @@ namespace FixMeetWeb.Models
         public string Address { get; set; }
 
         [Display(Name = "Category")]
-        [Required(ErrorMessage = "This field is required")]
-        public Category Category { get; set; }
+        [DisplayFormat(NullDisplayText = "No Category")]
+        public Category? Category { get; set; }
 
         /* [Display(Name = "Address")]
          [Required(ErrorMessage = "This field is required")]
