@@ -9130,19 +9130,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\orliv\\.nuget\\packages\\": {}
+    "C:\\Users\\עתניאל\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orliv\\source\\repos\\FixMeetWebApplication\\FixMeetWeb\\FixMeetWeb.csproj",
+      "projectUniqueName": "C:\\Users\\עתניאל\\Source\\Repos\\FixMeetWebSite\\FixMeetWeb\\FixMeetWeb.csproj",
       "projectName": "FixMeetWeb",
-      "projectPath": "C:\\Users\\orliv\\source\\repos\\FixMeetWebApplication\\FixMeetWeb\\FixMeetWeb.csproj",
-      "packagesPath": "C:\\Users\\orliv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orliv\\source\\repos\\FixMeetWebApplication\\FixMeetWeb\\obj\\",
+      "projectPath": "C:\\Users\\עתניאל\\Source\\Repos\\FixMeetWebSite\\FixMeetWeb\\FixMeetWeb.csproj",
+      "packagesPath": "C:\\Users\\עתניאל\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\עתניאל\\Source\\Repos\\FixMeetWebSite\\FixMeetWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\orliv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\עתניאל\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9229,7 +9229,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

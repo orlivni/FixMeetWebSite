@@ -10,17 +10,23 @@ namespace FixMeetWeb.Models
     {
         [Key]
         public int OfferID { get; set; }
+
         [Required]
-        public DateTime OfferPlaced { get; set; }
-        //[Required]
-        //public DateTime? OfferFullfilled { get; set; }
+        public Request Request { get; set; }
         [Required]
-        public int SupplierId { get; set; }
+        public int RequestID { get; set; }
+
         [Required]
         public Supplier Supplier { get; set; }
         [Required]
-        public string Description { get; set; }
+        public int SupplierId { get; set; }
+
         [Required]
-        public int RequestID { get; set; }
+        public DateTime OfferDate { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public Booking Booking { get; set; } //refernce to booking if exists, else will be NULL
     }
 }
