@@ -22,7 +22,7 @@ namespace FixMeetWeb.Data
             {
             new Supplier{FirstName="Otniel", LastName="Yazdi", Email="otniely@gmail.com", UserName="otniel", Password="123456789", Address="Bnei Brak", Category=Category.Transportation, Radius=5},
             new Supplier{FirstName="Ashot", LastName="Petrosian", Email="ashotp@gmail.com", UserName="ashotpetrosian", Password="1234567", Address="Netanya", Category=Category.Sport, Radius=3},
-            new Supplier{FirstName="Yasmin", LastName="Tal", Email="yasmint@gmail.com", UserName="yasmintal", Password="123456", Address="Nahariya", Category=Category.Sport, Radius=6},
+            new Supplier{FirstName="Yasmin", LastName="Tal", Email="yasmint@gmail.com", UserName="YasminTal", Password="123456", Address="Nahariya", Category=Category.Sport, Radius=6},
             new Supplier{FirstName="Or", LastName="Livni", Email="orl@gmail.com", UserName="orlivni", Password="1234", Address="Netanya", Category=Category.Food, Radius=8}
             };
             foreach (Supplier s in suppliers)

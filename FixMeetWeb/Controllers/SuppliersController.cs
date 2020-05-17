@@ -94,7 +94,7 @@ namespace FixMeetWeb.Controllers
             }
 
             var supplier = await _context.Suppliers
-                .FirstOrDefaultAsync(m => m.SupplierID == id);
+                .FirstOrDefaultAsync(m => m.UserID == id);
             if (supplier == null)
             {
                 return NotFound();
@@ -114,7 +114,7 @@ namespace FixMeetWeb.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SupplierID,FirstName,LastName,Email,ConfirmEmail,UserName,Password,ConfirmPassword,Address,Category,Radius")] Supplier supplier)
+        public async Task<IActionResult> Create([Bind("UserID,FirstName,LastName,Email,ConfirmEmail,UserName,Password,ConfirmPassword,Address,Category,Radius")] Supplier supplier)
         {
             try
             {
@@ -156,9 +156,9 @@ namespace FixMeetWeb.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SupplierID,FirstName,LastName,Email,ConfirmEmail,UserName,Password,ConfirmPassword,Address,Category,Radius")] Supplier supplier)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID,FirstName,LastName,Email,ConfirmEmail,UserName,Password,ConfirmPassword,Address,Category,Radius")] Supplier supplier)
         {
-            if (id != supplier.SupplierID)
+            if (id != supplier.UserID)
             {
                 return NotFound();
             }
@@ -172,7 +172,7 @@ namespace FixMeetWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SupplierExists(supplier.SupplierID))
+                    if (!SupplierExists(supplier.UserID))
                     {
                         return NotFound();
                     }
@@ -195,7 +195,7 @@ namespace FixMeetWeb.Controllers
             }
 
             var supplier = await _context.Suppliers
-                .FirstOrDefaultAsync(m => m.SupplierID == id);
+                .FirstOrDefaultAsync(m => m.UserID == id);
             if (supplier == null)
             {
                 return NotFound();
@@ -217,7 +217,7 @@ namespace FixMeetWeb.Controllers
 
         private bool SupplierExists(int id)
         {
-            return _context.Suppliers.Any(e => e.SupplierID == id);
+            return _context.Suppliers.Any(e => e.UserID == id);
         }
     }
 }

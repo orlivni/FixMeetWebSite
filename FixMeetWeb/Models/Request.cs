@@ -11,12 +11,6 @@ namespace FixMeetWeb.Models
         [Key]
         public int RequestID { get; set; }
 
-        [Required]
-        public Customer Customer { get; set; }
-
-        [Required]
-        public int CustomerId { get; set; }
-
         public DateTime RequestDate { get; set; }
 
         [Required]
@@ -27,5 +21,9 @@ namespace FixMeetWeb.Models
         public ICollection<Offer> OffersFromSuppliers { get; set; }
 
         public Booking? Booking { get; set; } //refernce to booking if exists, else will be NULL
+
+        //FK
+        public int UserID { get; set; }
+        public Customer Customer { get; set; }
     }
 }

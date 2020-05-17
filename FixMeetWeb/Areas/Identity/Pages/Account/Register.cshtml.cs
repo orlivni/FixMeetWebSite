@@ -50,7 +50,7 @@ namespace FixMeetWeb.Areas.Identity.Pages.Account
             [HiddenInput(DisplayValue = true)]
             [Display(Name = "Supplier ID")]
             [Required(ErrorMessage = "This field is required")]
-            public int SupplierID { get; set; }
+            public int UserID { get; set; }
 
             [Display(Name = "First Name")]
             [Required(ErrorMessage = "This field is required")]
