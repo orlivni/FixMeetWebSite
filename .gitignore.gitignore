@@ -3,4 +3,9 @@
 ################################################################################
 
 **/.vs
+**/bin
+**/obj
+FixMeetWebSite/bin
+FixMeetWebSite/obj
 FixMeetWebSite/.vs/
+
