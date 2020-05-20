@@ -12,7 +12,7 @@ namespace FixMeetWeb.Data
         {
             context.Database.EnsureCreated();
 
-            // Look for any students.
+            // Look for any suppliers.
             if (context.Suppliers.Any())
             {
                 return;   // DB has been seeded

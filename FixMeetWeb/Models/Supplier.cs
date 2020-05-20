@@ -53,7 +53,7 @@ namespace FixMeetWeb.Models
 
         [Display(Name = "Category")]
         [DisplayFormat(NullDisplayText = "No Category")]
-        public Category? Category { get; set; }
+        public Category Category { get; set; }
 
         /* [Display(Name = "Address")]
          [Required(ErrorMessage = "This field is required")]

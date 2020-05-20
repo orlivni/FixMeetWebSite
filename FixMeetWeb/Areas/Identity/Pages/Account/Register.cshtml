@@ -2,12 +2,12 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+   
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div class="row">
-    <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h4>Create a new account.</h4>
             <hr />
@@ -54,8 +54,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Input.Category" class="control-label"></label>
-                <select asp-for="Input" asp-items="Html.GetEnumSelectList<InputType>()" class="form-control"></select>
-                <span asp-validation-for="Input" class="text-danger"></span>
+                <select asp-for="Input.Category" asp-items="Html.GetEnumSelectList<FixMeetWeb.Models.Category>()" class="form-control"></select>
+                <span asp-validation-for="Input.Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Input.Radius" class="control-label"></label>
@@ -65,7 +65,7 @@
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+  <div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to register.</h4>
             <hr />
@@ -95,7 +95,7 @@
             }
         </section>
     </div>
-</div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

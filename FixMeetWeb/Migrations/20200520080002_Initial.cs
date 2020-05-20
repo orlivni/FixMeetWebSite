@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FixMeetWeb.Data.Migrations
+namespace FixMeetWeb.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +47,53 @@ namespace FixMeetWeb.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    ConfirmEmail = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    ConfirmPassword = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.UserID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Suppliers",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    ConfirmEmail = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    ConfirmPassword = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: false),
+                    Category = table.Column<int>(nullable: true),
+                    Radius = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Suppliers", x => x.UserID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +114,7 @@ namespace FixMeetWeb.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -153,6 +194,93 @@ namespace FixMeetWeb.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Requests",
+                columns: table => new
+                {
+                    RequestID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RequestDate = table.Column<DateTime>(nullable: false),
+                    Category = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    BookingID = table.Column<int>(nullable: true),
+                    UserID = table.Column<int>(nullable: false),
+                    CustomerUserID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Requests", x => x.RequestID);
+                    table.ForeignKey(
+                        name: "FK_Requests_Customers_CustomerUserID",
+                        column: x => x.CustomerUserID,
+                        principalTable: "Customers",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Offers",
+                columns: table => new
+                {
+                    OfferID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RequestID = table.Column<int>(nullable: false),
+                    OfferDate = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    UserID = table.Column<int>(nullable: false),
+                    SupplierUserID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Offers", x => x.OfferID);
+                    table.ForeignKey(
+                        name: "FK_Offers_Requests_RequestID",
+                        column: x => x.RequestID,
+                        principalTable: "Requests",
+                        principalColumn: "RequestID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Offers_Suppliers_SupplierUserID",
+                        column: x => x.SupplierUserID,
+                        principalTable: "Suppliers",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Booking",
+                columns: table => new
+                {
+                    BookingID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BookingDate = table.Column<DateTime>(nullable: false),
+                    OfferID = table.Column<int>(nullable: false),
+                    CustomerId = table.Column<int>(nullable: false),
+                    SupplierId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Booking", x => x.BookingID);
+                    table.ForeignKey(
+                        name: "FK_Booking_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Booking_Offers_OfferID",
+                        column: x => x.OfferID,
+                        principalTable: "Offers",
+                        principalColumn: "OfferID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Booking_Suppliers_SupplierId",
+                        column: x => x.SupplierId,
+                        principalTable: "Suppliers",
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -191,10 +319,66 @@ namespace FixMeetWeb.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Booking_CustomerId",
+                table: "Booking",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Booking_OfferID",
+                table: "Booking",
+                column: "OfferID",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Booking_SupplierId",
+                table: "Booking",
+                column: "SupplierId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Offers_RequestID",
+                table: "Offers",
+                column: "RequestID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Offers_SupplierUserID",
+                table: "Offers",
+                column: "SupplierUserID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Requests_BookingID",
+                table: "Requests",
+                column: "BookingID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Requests_CustomerUserID",
+                table: "Requests",
+                column: "CustomerUserID");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Requests_Booking_BookingID",
+                table: "Requests",
+                column: "BookingID",
+                principalTable: "Booking",
+                principalColumn: "BookingID",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Booking_Customers_CustomerId",
+                table: "Booking");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Requests_Customers_CustomerUserID",
+                table: "Requests");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Booking_Offers_OfferID",
+                table: "Booking");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -215,6 +399,21 @@ namespace FixMeetWeb.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Offers");
+
+            migrationBuilder.DropTable(
+                name: "Requests");
+
+            migrationBuilder.DropTable(
+                name: "Booking");
+
+            migrationBuilder.DropTable(
+                name: "Suppliers");
         }
     }
 }
