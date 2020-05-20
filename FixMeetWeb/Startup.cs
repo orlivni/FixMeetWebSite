@@ -33,9 +33,7 @@ namespace FixMeetWeb
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddDbContext<FixMeetContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+           
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
