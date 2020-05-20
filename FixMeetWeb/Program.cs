@@ -24,7 +24,7 @@ namespace FixMeetWeb
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<FixMeetContext>();
+                    var context = services.GetRequiredService<ApplicationDbContext>();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

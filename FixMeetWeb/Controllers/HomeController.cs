@@ -15,9 +15,9 @@ namespace FixMeetWeb.Controllers
 {
     public class HomeController : Controller
     {
-       /* private readonly FixMeetContext _context;
+       /* private readonly ApplicationDbContext _context;
 
-        public HomeController(FixMeetContext context)
+        public HomeController(ApplicationDbContext context)
         {
             _context = context;
         }*/

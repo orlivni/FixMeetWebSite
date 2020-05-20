@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FixMeetWeb.Data
 {
-    //public class FixMeetContext : DbContext
+    //public class ApplicationDbContext : DbContext
     //{
-    //    public FixMeetContext(DbContextOptions<FixMeetContext> options) : base(options)
+    //    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     //    {
     //    }
 

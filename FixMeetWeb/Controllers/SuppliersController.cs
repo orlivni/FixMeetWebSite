@@ -14,9 +14,9 @@ namespace FixMeetWeb.Controllers
 {
     public class SuppliersController : Controller
     {
-        private readonly FixMeetContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public SuppliersController(FixMeetContext context)
+        public SuppliersController(ApplicationDbContext context)
         {
             _context = context;
         }
