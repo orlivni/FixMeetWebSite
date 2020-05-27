@@ -13,6 +13,25 @@
     <thead>
         <tr>
             <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">First Name</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LastSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Last Name</a>
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Category
+            </th>
+        <tr>
+            @*<th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
@@ -37,7 +56,7 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th></th>
-        </tr>
+        </tr>*@
     </thead>
     <tbody>
 @foreach (var item in Model) {
@@ -52,16 +71,10 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ConfirmEmail)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConfirmPassword)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Address)

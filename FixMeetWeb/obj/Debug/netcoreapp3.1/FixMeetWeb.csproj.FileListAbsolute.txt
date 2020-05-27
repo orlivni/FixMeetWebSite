@@ -1111,3 +1111,8 @@ C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Ra
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Details.cshtml.g.cs
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Edit.cshtml.g.cs
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Index.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Create.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Delete.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Details.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Edit.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Index.cshtml.g.cs
