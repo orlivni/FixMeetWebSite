@@ -1106,3 +1106,8 @@ C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\st
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\FixMeetWeb.dll
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\FixMeetWeb.pdb
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\FixMeetWeb.genruntimeconfig.cache
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Create.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Delete.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Details.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Edit.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Requests\Index.cshtml.g.cs
