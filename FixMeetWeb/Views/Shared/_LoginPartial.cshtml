@@ -25,6 +25,11 @@
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/OurCode/CustomerHomePage">customer</a>
             </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Create", "Requests", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Requests</button>
+                </form>
+            </li>
 
         }
     </ul>
