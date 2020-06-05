@@ -1116,3 +1116,13 @@ C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Ra
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Details.cshtml.g.cs
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Edit.cshtml.g.cs
 C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Index.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Bookings\Create.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Bookings\Delete.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Bookings\Details.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Bookings\Edit.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Bookings\Index.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Offers\Create.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Offers\Delete.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Offers\Details.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Offers\Edit.cshtml.g.cs
+C:\Users\ashot\Source\Repos\FixMeetWebSite\FixMeetWeb\obj\Debug\netcoreapp3.1\Razor\Views\Offers\Index.cshtml.g.cs
