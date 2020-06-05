@@ -18,5 +18,6 @@ namespace FixMeetWeb.Data
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Request> Requests { get; set; }
+        public DbSet<FixMeetWeb.Models.Booking> Booking { get; set; }
     }
 }
